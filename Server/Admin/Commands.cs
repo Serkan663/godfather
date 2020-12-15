@@ -10,14 +10,14 @@ namespace TheGodfatherGM.Server.Admin
 {
     public class Commands : Script
     {
-        [Command("anim")]
-        public void anim(Client player, string animDict, string animName, int flag)
+        [Command("aduty")]
+        public void aduty(Client player, string adutyDict, string adutyName, int flag)
         {
             AccountController account = player.getData("ACCOUNT");
             if (account == null) return;
             if (!AdminController.AdminRankCheck("goto", account)) return;
 
-            account.CharacterController.PlayAnimation(player, animDict, animName, flag);
+            account.CharacterController.PlayAnimation(player, adutyDict, adutyName, flag);
         }
 
         [Command("scene")]
